@@ -1,0 +1,216 @@
+#python
+import time
+import os
+from colorama import init 
+from termcolor import colored 
+init()
+os.system('cls' if os.name == 'nt' else "printf '\033c'")
+print(('=======================') + ('ROBCO') + ('========================'))
+settings = 0
+games = 0
+
+what = 1
+maxin = 0
+import random
+rannum1 = 0
+rannum2 = 0
+import time
+def game1():
+ os.system('cls' if os.name == 'nt' else "printf '\033c'")
+ maxin = 10
+ points = 0
+ for x in range(10):
+   rannum1 = random.randint(1,maxin)
+   rannum2 = random.randint(1,maxin)
+   awnser = rannum1 + rannum2
+   guess = input(colored(f'what is {rannum1} + {rannum2}?\n'))
+   if guess == (f'{awnser}'):
+     print(colored('correct!', 'green'))
+     points += 1
+     maxin += 10
+   else:
+      print(colored('incorrect!', 'red'))
+      maxin += 10
+ if int(points) >= 5:
+   print(colored(f'you won! points:{points}','green'))
+ else:
+   print(f'colored you lost! points:{points}', 'red')
+ time.sleep(0.5)
+ exit = input('type @exit to exit.\n')
+ if exit == '@exit' or exit == '@Exit':
+   os.system('cls' if os.name == 'nt' else "printf '\033c'")
+   home()
+def game2():
+ os.system('cls' if os.name == 'nt' else "printf '\033c'")
+ import random
+ diff = input('what difficulty? [H]ard, [M]edium, [E]asy, [B]aby.\n')
+ if diff == 'E' or diff == 'e':
+   number = random.randint(1, 100)
+ if diff == 'M' or diff == 'm':
+    number = random.randint(1, 150)
+ if diff == 'H' or diff == 'h':
+    number = random.randint(1, 200)
+ else:
+    number = random.randint(1, 50)
+ number_of_guesses = 0
+ print('what is the number?')
+ gams = 100
+ while gams == 100:
+      guess = int(input())
+      number_of_guesses += 1
+      if guess < number:
+          print(colored('Your guess is too low', 'red'))
+      if guess > number:
+          print(colored('Your guess is too high', 'red'))
+      if guess == number:
+          break
+ if guess == number:
+      print(colored('You guessed the number in ' + str(number_of_guesses) + ' tries!', 'green'))
+      gams = 0
+      exit = input('type @exit to exit\n')
+      if exit == '@exit' or exit == '@Exit':
+       os.system('cls' if os.name == 'nt' else "printf '\033c'")
+       home()
+def game3():
+ os.system('cls' if os.name == 'nt' else "printf '\033c'")
+ dif = input('what difficulty?\n [E]asy, [M]edium, [H]ard, [G]enius\n')
+ 
+
+
+
+ 
+ 
+
+ 
+ 
+ 
+
+def logged():
+ os.system('cls' if os.name == 'nt' else "printf '\033c'")
+ print(('=======================') + ('ROBCO') + ('========================'))
+ print('international computers for all your needs!\n\n')
+ print('##########')
+ print('#log in:#')
+ print('##########')
+ login = input('>>')
+ if login == (signup):
+   print('password:')
+   passwordlogged = input('>>')
+   if passwordlogged == (password):
+     print(colored(f'welcome, {user}.', 'green'))
+     print('.')
+     time.sleep(0.5)
+     print('..')
+     time.sleep(0.5)
+     print('...')
+     time.sleep(1)
+     os.system('cls' if os.name == 'nt' else "printf '\033c'")
+     home()
+   else:
+     logged()
+ else:
+   logged()
+     
+
+ 
+
+
+print('international computers for all your needs!\n\n')
+print('##########')
+print('#sign up:#')
+print('##########')
+signup = input('>>')
+user = signup
+print('password:')
+password = input('>>')
+kools = password
+print(colored(f'welcome, {user}.', 'green'))
+print('.')
+time.sleep(0.5)
+print('..')
+time.sleep(0.5)
+print('...')
+time.sleep(1)
+os.system('cls' if os.name == 'nt' else "printf '\033c'")
+def home():
+  print('\n\n')
+  print(colored('print s for settings, g for games, ! for logging out and ? for help.',('yellow')))
+  what = input('what to do?\n>>')
+  settings = 0
+  games = 0
+  if what == 'g' or what == 'G':
+   games = True
+  if what == 's' or what == 'S':
+   settings = True
+  if what == '?':
+   os.system('cls' if os.name == 'nt' else "printf '\033c'")
+   print('help:')
+   print('this is a terminal that i made. on this terminal you can play games, go onto settings and download games.\ndont know what to type to get to places?\ntype g for games, s for settings and apps for app store.\n what to do for settings?\n if you are in settings. there would be 2 things:color and reset password. to get to colors, type color not the color you want. then to reset password, just type resset password.')
+   exit = input('type @exit to exit\n')
+   if exit == '@exit' or exit == '@Exit':
+     os.system('cls' if os.name == 'nt' else "printf '\033c'")
+     home()
+  if what == '!':
+   os.system('cls' if os.name == 'nt' else "printf '\033c'")
+   print(colored('do you wish to log out? [Y]/[N]\n', 'red'))
+   logout = input('>>')
+   if logout == 'Y' or logout == 'y':
+     logged()
+   else:
+       exit = input('type @exit to exit\n')
+       if exit == '@exit' or exit == '@Exit':
+         os.system('cls' if os.name == 'nt' else "printf '\033c'")
+         home()
+       else:
+         logged()
+
+
+   
+  if games == True:
+   os.system('cls' if os.name == 'nt' else "printf '\033c'")
+   print('game 1 des:\n\n a simple maths adding game. \n \n game 2 des:\n\n a simple guessing game.')
+   choosegame = input(colored('game 1 game 2 or game 3?\n','green'))
+   if choosegame == '1' or choosegame == 'game 1' or choosegame == 'Game 1':
+     game1()
+   if choosegame == '2' or choosegame == 'game 2' or choosegame == 'Game 2':
+     game2()
+   else:
+     game3()
+  
+
+  if settings == True:
+   os.system('cls' if os.name == 'nt' else "printf '\033c'")
+   print(f' hello, {user}.')
+   print('type [color] to activate colors and see them.')
+   print('type reset password to reset password')
+   sets = input('>>')
+   if sets == 'color' or sets == 'Color':
+      print('1 for yellow 2 for red 3 for blue 4 for green')
+      color = input('what color:')
+      if color == '1':
+        color = 'yellow'
+      if color == '2':
+        color = 'red'
+      if color == '3':
+        color = 'blue'
+      if color == '4':
+        color = 'green'
+      
+      print(colored('your color:', (color)))
+      exit = input('type @exit to exit. \n')
+      if exit == '@exit' or exit == '@Exit':
+        os.system('cls' if os.name == 'nt' else "printf '\033c'")
+        home()
+   password = kools
+   if sets == 'reset password' or sets == 'Reset password':
+     print(f'your old password:{password}')
+     password = input('new password:')
+     print(password)
+     exit = input('type @exit to exit\n')
+     if exit == '@exit' or exit == '@Exit':
+       os.system('cls' if os.name == 'nt' else "printf '\033c'")
+       home()
+home()
+
+
+ 
